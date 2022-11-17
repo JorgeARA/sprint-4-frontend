@@ -18,11 +18,13 @@ export const RestaurantList = ({ arrayRestaurant: restaurantArray }) => {
         beforeyou: ''
     })
 
-    const handleClickRow = (e) => {
-        setRestaurant({
-            ...restaurant,
-            [e.target.name]: e.target.value,
-        });
+    const handleClickRow = (restaurantObject) => {
+        console.log('restaurantObject');
+        console.log(restaurantObject);
+        // setRestaurant({
+        //     ...restaurant,
+        //     [e.target.name]: e.target.value,
+        // });
         navigate("/dishes");
     };
 
@@ -33,8 +35,8 @@ export const RestaurantList = ({ arrayRestaurant: restaurantArray }) => {
                     {restaurantArray.map((restaurantObject, index) => {
                         return (
                             <>
-                                <Row key={index} onClick={handleClickRow} >
-                                    <Col xs={2}><img src={restaurantObject.imagen} alt="restaurant" /></Col>
+                                <Row key={index} onClick={handleClickRow(restaurantObject)} >
+                                    <Col xs={2}><img src={restaurantObject.imagen} alt="restaurant"/></Col>
                                     <Col>
                                         <p className='desc_text'>{restaurantObject.descripcion}</p>
                                         <p className='rating_text'><FcRating /> {restaurantObject.numStars}</p>

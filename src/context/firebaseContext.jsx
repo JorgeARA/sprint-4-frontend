@@ -19,9 +19,9 @@ export function AuthProvider ({children}) {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const fakeDataRestaurants = [
-        {id:0, descripcion:"Pardes Restaurant", imagen:"https://firebasestorage.googleapis.com/v0/b/sprint4-61808.appspot.com/o/restaurantsImg%2Frest1.PNG?alt=media&token=8d0baf0b-4788-4511-89b4-c7941ccac823", numStars:"4", workTime:"Work time 09:30 - 23:00", beforeyou:"4$"}, 
-        {id:1, descripcion:"Glamour Kafe", imagen:"https://firebasestorage.googleapis.com/v0/b/sprint4-61808.appspot.com/o/restaurantsImg%2Frest2.PNG?alt=media&token=5e9f38f8-dd5f-4d48-a3fd-e7e1ac5ae584", numStars:"3", workTime:"Work time 09:00 - 21:00", beforeyou:"13$"}, 
-        {id:2, descripcion:"Aromat Bakery", imagen:"https://firebasestorage.googleapis.com/v0/b/sprint4-61808.appspot.com/o/restaurantsImg%2Frest3.PNG?alt=media&token=7bd78473-efe8-4221-b121-d2a761a72b11", numStars:"5", workTime:"Work Time 09:00 - 22:00", beforeyou:"3$"}, 
+        {id:0, description:"Pardes Restaurant", image:"https://firebasestorage.googleapis.com/v0/b/sprint4-61808.appspot.com/o/restaurantsImg%2Frest1.PNG?alt=media&token=8d0baf0b-4788-4511-89b4-c7941ccac823", numStars:"4", workTime:"Work time 09:30 - 23:00", beforeyou:"4$"}, 
+        {id:1, description:"Glamour Kafe", image:"https://firebasestorage.googleapis.com/v0/b/sprint4-61808.appspot.com/o/restaurantsImg%2Frest2.PNG?alt=media&token=5e9f38f8-dd5f-4d48-a3fd-e7e1ac5ae584", numStars:"3", workTime:"Work time 09:00 - 21:00", beforeyou:"13$"}, 
+        {id:2, description:"Aromat Bakery", image:"https://firebasestorage.googleapis.com/v0/b/sprint4-61808.appspot.com/o/restaurantsImg%2Frest3.PNG?alt=media&token=7bd78473-efe8-4221-b121-d2a761a72b11", numStars:"5", workTime:"Work Time 09:00 - 22:00", beforeyou:"3$"}, 
     ];
 
     const fakeDataDishes = [

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Container, Stack, Nav, Dropdown } from 'react-bootstrap';
+import { Container, Nav, Dropdown } from 'react-bootstrap';
 import DishesList from './DishesList';
 import './dishes.css';
 import { FcRating, FcShop, FcLike } from "react-icons/fc";
@@ -38,17 +38,26 @@ export const Dishes = ({restaurantsObject: objectRestaurant} ) => {
 
     useEffect(() => {
         //Retornar el listado de platos
-        async function fetchDishes(){
-            const dishesFetch = await findDishes(0);
-            setArrayDish(dishesFetch);
-        }
-        fetchDishes();
+        try{
+            async function fetchDishes(){
+                const dishesFetch = await findDishes(0);
+                setArrayDish(dishesFetch);
+            }
+            fetchDishes();
+        }catch(error){
+        console.error(error);
+    }
      }, [ ])
 
+    //Loading
+    if(loading) return (
+        <div className="spinner-border text-warning"  role="status">
+            <span className="visually-hidden">Loading...</span>
+        </div>
+    )
+
     return (
-        <>
             <Container fluid className='login_container'>
-                <Stack>
                     {/* Datos del usuario */}
                     <div style={{ display:"flex", justifyContent:"flex-end"}}>
                         <Dropdown>
@@ -62,6 +71,7 @@ export const Dishes = ({restaurantsObject: objectRestaurant} ) => {
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
+                    {/* Datos del restaurante */}
                     <div className="restaurant_container">
                         {restaurantSelected.map(restaurant => (
                             <div>
@@ -79,6 +89,7 @@ export const Dishes = ({restaurantsObject: objectRestaurant} ) => {
                                 </div>
                             </div>
                         ))}
+                        {/* Filtros de los platos */}
                         <Nav variant="pills" defaultActiveKey="/home" className="margins">
                             <Nav.Item style={{ backgroundColor:"#C6C642"}}> </Nav.Item>
                             <Nav.Item>
@@ -92,29 +103,9 @@ export const Dishes = ({restaurantsObject: objectRestaurant} ) => {
                             </Nav.Item>
                         </Nav> 
 
-                        {/* {arrayDish ? <DishesList arrayDish={arrayDish} /> : null} */}
+                        {arrayDish ? <DishesList arrayDish={arrayDish} /> : null}
                     </div>
-                    {/* <div>
-                    {objectRestaurant.map((objectRestaurantSelected) => {
-                        return (
-                            <>
-                                <Row key={objectRestaurantSelected.id} onClick={() => window.alert("Hola")}>
-                                    <Col xs={2}><img src={objectRestaurantSelected.imagen} alt="restaurant" /></Col>
-                                    <Col>
-                                        <p className='desc_text'>{objectRestaurantSelected.descripcion}</p>
-                                        <p className='rating_text'><FcRating /> {objectRestaurantSelected.numStars}</p>
-                                        <p className='work_time_text'>{objectRestaurantSelected.workTime}</p>
-                                        <p>Before you <b>{objectRestaurantSelected.beforeyou}</b></p>
-                                    </Col>
-                                </Row>
-                                <hr />
-                            </>
-                        )
-                    })} 
-                    </div> */}
-                </Stack>
             </Container>
-            </>
     )
 };
 export default Dishes;
