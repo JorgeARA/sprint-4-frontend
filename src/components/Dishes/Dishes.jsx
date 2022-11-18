@@ -45,8 +45,8 @@ export const Dishes = ({restaurantsObject: objectRestaurant} ) => {
             }
             fetchDishes();
         }catch(error){
-        console.error(error);
-    }
+            console.error(error);
+        }
      }, [ ])
 
     //Loading
