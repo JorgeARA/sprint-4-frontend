@@ -1,12 +1,9 @@
 
-.login_container{
+.dishes_container{
     background-color: (180deg, #FFFEFA 0%, #FFE031 0%, #FFFEFA 0.01%, #FCFCFC 100%); 
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-right: 6%;
-    padding-left: 6%;
     width: 100%;
     height: 100%;
+    margin-top: 5%;
   }
 
 .restaurant_container{
@@ -24,17 +21,18 @@
   }
   
   .column_left {
-    flex: 20%;
+    width: 50%;
   }
 
   .column_right {
-    flex: 80%;
+    width: 50%;
   }
 
   
 .img_container{
     margin: auto;
     display: block;
+    border-radius: 10%;
 }
 
 .h2_text {
@@ -49,4 +47,15 @@
     font-size:large;
     line-height: 25px;
     margin-bottom: 0px;
+}
+
+.container_restaurant{
+  display: flex;
+  justify-content: center;
+}
+
+.margins{
+  margin-top: 5%;
+  margin-bottom: 0%;
+  font-size: large;
 }

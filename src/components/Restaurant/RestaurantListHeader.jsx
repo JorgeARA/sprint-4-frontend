@@ -14,11 +14,11 @@ export const RestaurantListHeader = () => {
                     <Dropdown.Item as="button"><GrLocation /> 46 - 23 8th Street </Dropdown.Item>
             </DropdownButton>
 
-            <Carousel className='margins'>
+            <Carousel >
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://firebasestorage.googleapis.com/v0/b/sprint4-61808.appspot.com/o/restaurantBanners%2Fspecial-opening-offer.png?alt=media&token=f28607c7-eb90-4c5d-ae1b-1a0bda0a2ad1"
+                        src="https://firebasestorage.googleapis.com/v0/b/sprint4-61808.appspot.com/o/restaurantBanners%2Fspecial-opening-offer.png?alt=media&token=64a54426-d22a-43f0-b6d5-565676faa3e7"
                         alt="First slide" />
                     <Carousel.Caption>
                         <h3></h3>
@@ -28,7 +28,7 @@ export const RestaurantListHeader = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://firebasestorage.googleapis.com/v0/b/sprint4-61808.appspot.com/o/restaurantBanners%2Flanding-banner-co-1.png?alt=media&token=1efa7974-bfa9-4e8f-b305-8a3ca51c5a7e"
+                        src="https://firebasestorage.googleapis.com/v0/b/sprint4-61808.appspot.com/o/restaurantBanners%2Flanding-banner-co-1.png?alt=media&token=a4cfe9d3-5a1c-4b2e-a608-a3522196febd"
                         alt="Second slide" />
 
                     <Carousel.Caption>
@@ -39,7 +39,7 @@ export const RestaurantListHeader = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://firebasestorage.googleapis.com/v0/b/sprint4-61808.appspot.com/o/restaurantBanners%2Flanding-banner-co-2.png?alt=media&token=a955e74d-913f-48a7-bf2b-5d192c48c60e"
+                        src="https://firebasestorage.googleapis.com/v0/b/sprint4-61808.appspot.com/o/restaurantBanners%2Flanding-banner-co-2.png?alt=media&token=f1ed89e7-0abf-4669-a172-df303166488b"
                         alt="Third slide" />
 
                     <Carousel.Caption>
@@ -52,8 +52,8 @@ export const RestaurantListHeader = () => {
 
             <h4 style={{ marginTop:"2%", marginBottom:"2%"}}> Restaurants and cafes </h4>
 
-            <Nav variant="pills" defaultActiveKey="/home" className="margins">
-            <Nav.Item style={{ backgroundColor:"#C6C642"}}> </Nav.Item>
+            <Nav variant="pills" defaultActiveKey="/" >
+            <Nav.Item > </Nav.Item>
                 <Nav.Item>
                     <Nav.Link href="/">All</Nav.Link>
                 </Nav.Item>

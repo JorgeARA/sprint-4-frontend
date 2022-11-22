@@ -1,4 +1,4 @@
-.login_container{
+.disheslist_container{
     background-color: (180deg, #FFFEFA 0%, #FFE031 0%, #FFFEFA 0.01%, #FCFCFC 100%); 
     padding-top: 5%;
     padding-bottom: 5%;
@@ -10,6 +10,7 @@
 
 .col_img_container{
     column-width:5%;
+    border-bottom-right-radius: 50%;
 }
 
 .desc_text{
@@ -31,7 +32,18 @@
 }
 
 .column_wraper{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 5px;
+    flex-direction: row;
 }
+
+.row_container{
+    display: flex;
+flex-wrap: wrap
+}
+
+.desc_text{
+    font-weight:bold;
+    font-size:large;
+    line-height: 25px;
+    margin-bottom: 0px;
+}
+ 

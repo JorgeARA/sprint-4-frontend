@@ -27,8 +27,13 @@ export function Login() {
         e.preventDefault();
         setError('');
         try{
-            await login(user.email, user.password);
-            navigate("/");
+            const userRole = await login(user.email, user.password);
+            if (userRole  === "user") {
+                navigate("/");
+            } else {
+                navigate("/admin");
+            }
+            
         } catch (error) {
             if(error.code === "auth/internal-error"){
                 setError('Invalid e-mail');
@@ -133,24 +138,6 @@ export function Login() {
                         Don't have an account? Register!
                     </Button>
                 </div>
-
-               {/* <div>
-              {error && <p>{error}</p> }
-            <form onSubmit={handleSubmit}>
-                 <label htmlFor="email">Email</label>
-                 <input type="email" name="email" placeholder="youremail@company.com" onChange={handleChange}/>
-
-                 <label htmlFor="password">Password</label>
-                 <input type="password" name="password" id="password" onChange={handleChange} 
-                     placeholder="******"/>
-
-                 <button>Login</button>
-
-                 <a href="#1" onClick={handleResetPassword }>Forgot password?</a>
-             </form>
-
-             <button onClick={handleGoogleSignin}>Login with Google</button>
-         </div> */}
             </Stack>
         </Container>
     )

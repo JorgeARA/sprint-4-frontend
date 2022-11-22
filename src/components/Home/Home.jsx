@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { ref, getStorage, listAll, getDownloadURL } from "firebase/storage";
 import { useAuth } from '../../context/firebaseContext';
 import { FaUserAlt } from "react-icons/fa";
+import './home.css';
 
 
 export const Home = ({ emailUser: emailUser }) => {
@@ -53,10 +54,10 @@ export const Home = ({ emailUser: emailUser }) => {
     )
 
     return (
-        <Container className='login_container'>
+        <Container className='home_container'>
             {/* Datos del usuario */}
             <div style={{ display:"flex", justifyContent:"flex-end"}}>
-                 <Dropdown>
+                <Dropdown>
                     <Dropdown.Toggle variant="warning" id="dropdown-basic">
                         <FaUserAlt />  {user.displayName}
                         {/* <img src={user.photoURL} alt="Foto"></img> */}

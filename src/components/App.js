@@ -14,6 +14,16 @@ import { AuthProvider } from '../context/firebaseContext';
 import { ProtectedRoute } from './Generic/ProtectedRoute';
 import Verification from './Verification/Verification';
 import DishDetail from './Dishes/DishDetail';
+import { Order } from './Order/Order';
+import { OrderList } from './Order/OrderList';
+import { ConfirmationOrder } from './Order/ConfirmationOrder';
+import Admin from './Admin/Admin';
+import CrudRestaurants from './Admin/CrudRestaurants';
+import CrudDishes from './Admin/CrudDishes';
+import CrudRestaurantsList from './Admin/CrudRestaurantsList';
+import CrudRestaurantsForm from './Admin/CrudRestaurantsForm';
+import CrudDishesForm from './Admin/CrudDishesForm';
+import CrudDishesList from './Admin/CrudDishesList';
 
 
 function App() {
@@ -45,6 +55,36 @@ function App() {
                   } />
                   <Route path="/dishdetail" element={
                     <ProtectedRoute><DishDetail /></ProtectedRoute> 
+                  } />
+                  <Route path="/order" element={
+                    <ProtectedRoute><Order /></ProtectedRoute> 
+                  } />
+                  <Route path="/orderlist" element={
+                    <ProtectedRoute><OrderList /></ProtectedRoute> 
+                  } />
+                  <Route path="/confirmationorder" element={
+                    <ProtectedRoute><ConfirmationOrder /></ProtectedRoute> 
+                  } />
+                  <Route path="/admin" element={
+                    <ProtectedRoute><Admin /></ProtectedRoute> 
+                  } />
+                  <Route path="/crudrestaurants" element={
+                    <ProtectedRoute><CrudRestaurantsList /></ProtectedRoute> 
+                  } />
+                  <Route path="/create-restaurant" element={
+                    <ProtectedRoute><CrudRestaurantsForm /></ProtectedRoute> 
+                  } />
+                  <Route path="/edit-restaurant/:id" element={
+                    <ProtectedRoute><CrudRestaurantsForm/></ProtectedRoute> 
+                  } />
+                  <Route path="/cruddishes" element={
+                    <ProtectedRoute><CrudDishesList /></ProtectedRoute> 
+                  } />
+                  <Route path="/create-dish" element={
+                    <ProtectedRoute><CrudDishesForm /></ProtectedRoute> 
+                  } />
+                  <Route path="/edit-dish/:id" element={
+                    <ProtectedRoute><CrudDishesForm /></ProtectedRoute> 
                   } />
               </Routes>
             </AuthProvider> 
